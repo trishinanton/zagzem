@@ -1,0 +1,32 @@
+:root {
+  
+}
+
+.PhoneInputInput {  /* The phone number input stretches to fill all empty space */  flex: 1;  /* The phone number input should shrink     to make room for the extension input */  min-width: 0;
+  width: 100%;
+  padding: 15px 20px;
+  background: #f9f9f9;
+  color: #191a1d;
+  border: 2px solid #e2e2e2;
+  border-radius: 1000px;
+  outline: 0;
+}
+.PhoneInputInput:hover {
+  cursor: pointer;
+  border: 2px solid rgba(158,209,91,1);
+}
+
+.PhoneInputCountryIcon{
+  height: 45px;
+  width: 45px;
+  display: none;
+}
+
+.PhoneInputCountryIcon--border {
+  background-color: #FFF;
+  box-shadow: none;
+}
+
+.PhoneInputCountrySelect {
+  display: none;
+}

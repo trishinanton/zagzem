@@ -1,0 +1,200 @@
+
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*:before,*:after {
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+.add-button {
+}
+
+a {
+  font-family: 'Montserrat';
+  text-decoration: none;
+}
+
+h1 {
+}
+h2 {
+  font-weight: bold;
+  font-size: 3.2rem;
+  color: #3c4b5a;
+}
+h3 {
+  font-size: 1.7rem;
+  color: #3c4b5a;
+  text-align: center;
+}
+.slider_descr{
+  font-size: 3.1rem;
+}
+h4, input {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #3c4b5a;
+}
+h5 {
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: #3c4b5a;
+}
+h6 {
+  color: orange;
+}
+p {
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: #3c4b5a;
+}
+
+h2, h3, h4, h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 127%;
+
+}
+.menu-butt {
+  width: 204px
+}
+
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 2.4rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  .main-button {
+    margin-top: 25px;
+  }
+  .slider_descr{
+    font-size: 1.8rem !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  /*.makeStyles-menuBtn-23:before{*/
+  /*  display: none;*/
+  /*}*/
+}
+
+strong {
+  font-weight: bold;
+}
+.menu-butt {
+  width: 100%
+}
+.light-text {
+  font-weight: 400;
+}
+.hover-text {
+  transition: all .3s ease-out;
+}
+.hover-text:hover {
+  color: #53a321;
+  /*transform: scale(1.1);*/
+}
+
+button {
+  font-family: 'Montserrat';
+  appearance: none;
+  transition: all .5s ease;
+  border: none;
+  border-radius: 50rem !important;
+  padding: 20px 35px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.4rem;
+  outline: 0;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.filter-button {
+  position: fixed;
+  transition: all .5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  right: 35px;
+  bottom: 20px;
+  z-index: 200;
+  background: linear-gradient(90deg, rgba(158,209,91,1) 0%, rgba(1,235,136) 100%);
+  opacity: 1;
+  animation: as 2s infinite;
+}
+.filter-button:hover {
+  background: linear-gradient(90deg, rgba(1,235,136,1) 0%, rgba(158,209,91,1) 100%);
+  transform: scale(1.2);
+  opacity: 1;
+  animation: none;
+  cursor: pointer;
+}
+@keyframes as {
+    to {
+        opacity: 0.5;
+    }
+}
+
+
+
+.main-button {
+  position: relative;
+  margin: 15px 0;
+  background: linear-gradient(90deg, rgba(158,209,91,1) 0%, rgba(1,235,136) 100%);
+  box-shadow: #53a321 0px 6px 12px -5px;
+}
+
+.main-button:hover {
+  background: linear-gradient(
+          90deg
+          , rgba(1,235,136,1) 0%, rgba(158,209,91,1) 100%);
+  cursor: pointer;
+  box-shadow: rgba(60, 75, 90, 0.48) 0px 6px 6px -5px
+}
+.main-button-large {
+  width: 100%;
+}
+
+
+.breadcrumbs {
+}
+.breadcrumbs-link {
+  display: inline-block;
+  padding: 0 5px;
+}
+*[tooltip]:hover:after {
+  content: attr(tooltip);
+  position: absolute;
+  border: 1px solid #6dbf3a;
+  border-radius: 20px;
+  background-color: #6dbf3a;
+  padding: 5px;
+  color: #ffffff;
+  margin-bottom: 80px;
+  transition: all 1s ease-out 0.5s
+}
+/*.MuiBox-root-61{*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
+

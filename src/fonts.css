@@ -1,0 +1,153 @@
+@font-face {
+  font-family: 'FiraThin';
+  src: url('./fonts/Raleway-Thin.ttf');
+}
+@font-face {
+  font-family: 'FiraThinItalic';
+  src: url('./fonts/Raleway-ThinItalic.ttf');
+}
+
+@font-face {
+  font-family: 'FiraExtraLight';
+  src: url('./fonts/Raleway-ExtraLight.ttf');
+}
+@font-face {
+  font-family: 'FiraExtraLightItalic';
+  src: url('./fonts/Raleway-ExtraLightItalic.ttf');
+}
+
+@font-face {
+  font-family: 'FiraLight';
+  src: url('./fonts/Raleway-Light.ttf');
+}
+@font-face {
+  font-family: 'FiraLightItalic';
+  src: url('./fonts/Raleway-LightItalic.ttf');
+}
+
+@font-face {
+  font-family: 'FiraRegular';
+  src: url('./fonts/Raleway-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'FiraMedium';
+  src: url('./fonts/Raleway-Medium.ttf');
+}
+@font-face {
+  font-family: 'FiraMediumItalic';
+  src: url('./fonts/Raleway-MediumItalic.ttf');
+}
+
+@font-face {
+  font-family: 'FiraSemiBold';
+  src: url('./fonts/Raleway-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'FiraSemiBoldItalic';
+  src: url('./fonts/Raleway-SemiBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'FiraBold';
+  src: url('./fonts/Raleway-Bold.ttf');
+}
+@font-face {
+  font-family: 'FiraBoldItalic';
+  src: url('./fonts/Raleway-BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'FiraExtraBold';
+  src: url('./fonts/Raleway-ExtraBold.ttf');
+}
+@font-face {
+  font-family: 'FiraExtraBoldItalic';
+  src: url('./fonts/Raleway-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'FiraBlack';
+  src: url('./fonts/Raleway-Black.ttf');
+}
+@font-face {
+  font-family: 'FiraBlackItalic';
+  src: url('./fonts/Raleway-BlackItalic.ttf');
+}
+
+/*@font-face {*/
+/*  font-family: 'FiraThin';*/
+/*  src: url('./fonts/Raleway-Thin.ttf');*/
+/*}*/
+/*@font-face {*/
+/*  font-family: 'FiraThinItalic';*/
+/*  src: url('./fonts/Raleway-Thin.ttf');*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'FiraExtraLight';*/
+/*  src: url('./fonts/Raleway-Light.ttf');*/
+/*}*/
+/*@font-face {*/
+/*  font-family: 'FiraExtraLightItalic';*/
+/*  src: url('./fonts/Raleway-Light.ttf');*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'FiraLight';*/
+/*  src: url('./fonts/Raleway-Light.ttf');*/
+/*}*/
+/*@font-face {*/
+/*  font-family: 'FiraLightItalic';*/
+/*  src: url('./fonts/Raleway-Light.ttf');*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'FiraRegular';*/
+/*  src: url('./fonts/Raleway-Regular.ttf');*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'FiraMedium';*/
+/*  src: url('./fonts/Raleway-Medium.ttf');*/
+/*}*/
+/*@font-face {*/
+/*  font-family: 'FiraMediumItalic';*/
+/*  src: url('./fonts/Raleway-Medium.ttf');*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'FiraSemiBold';*/
+/*  src: url('./fonts/Raleway-Bold.ttf');*/
+/*}*/
+/*@font-face {*/
+/*  font-family: 'FiraSemiBoldItalic';*/
+/*  src: url('./fonts/Raleway-Bold.ttf');*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'FiraBold';*/
+/*  src: url('./fonts/Raleway-Bold.ttf');*/
+/*}*/
+/*@font-face {*/
+/*  font-family: 'FiraBoldItalic';*/
+/*  src: url('./fonts/Raleway-Bold.ttf');*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'FiraExtraBold';*/
+/*  src: url('./fonts/Raleway-ExtraBold.ttf');*/
+/*}*/
+/*@font-face {*/
+/*  font-family: 'FiraExtraBoldItalic';*/
+/*  src: url('./fonts/Raleway-ExtraBold.ttf');*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'FiraBlack';*/
+/*  src: url('./fonts/Raleway-Black.ttf');*/
+/*}*/
+/*@font-face {*/
+/*  font-family: 'FiraBlackItalic';*/
+/*  src: url('./fonts/Raleway-Black.ttf');*/
+/*}*/
