@@ -7,6 +7,7 @@ import "./styles.css";
 import "./slider-animations.css"
 import "./styles.css";
 import "./button.css";
+import axios from "axios";
 import slide1 from '../../img/images/ecokvarial.jpeg';
 import slide2 from '../../img/images/apelsin.jpg';
 import slide3 from '../../img/images/festival.jpeg';
@@ -44,6 +45,32 @@ const content = [
 ];
 
 export function SlickSlider() {
+    const [loading, setLoading] = React.useState(true);
+    const [sliderData, setSliderData] = React.useState()
+    
+    React.useEffect(() => {
+      const fetchData = async () => {
+        setLoading(true)
+        try {
+          const {data: response} = await axios.get('https://skgrouptrans.ru/gp-wp-projects/wp-json/wp/v2/slider?per_page=100')
+
+          const {slider} = response[0].acf
+          setSliderData(slider)
+        } catch(error) {
+          console.error(error.message)
+        }
+        setLoading(false)
+      }
+
+      fetchData()
+      
+      // .then(res => {
+      //   const {slider} = res.data[0].acf
+      //   setSliderData(slider)
+      // })
+      // .catch(err => console.log(err))
+    }, [])
+    
     var settings = {
         dots: true,
         infinite: true,
@@ -60,27 +87,29 @@ export function SlickSlider() {
     }
     return (
         <Slider {...settings}>
-            {content.map((item, index) => (
-                <>
-                    <div
-                        key={index}
-                        style={{background: `url('${item.image}') no-repeat center center`, backgroundSize:'cover', borderRadius: '15px'}}
-                        className="slider-content"
-                    >
-                    <div style={{position:'absolute', width:'100%', height:'100%', background: 'linear-gradient(180deg,rgba(16,7,0,.72) 36.73%,rgba(31,14,3,.1152) 124.33%)', borderRadius: '15px'}}>
-                        <div  className="inner">
-                            <h2 className='slider_descr'>{item.descr}</h2>
-                            <h3>{item.title2} {item.title}</h3>
-                            <Link to={item.link}>
-                                <button className="btn-slider">{item.button}</button>
-                            </Link>
-                        </div>
-                    </div>
+          {!loading && (
+            sliderData.map((item, index) => (
+                  <>
+                      <div
+                          key={index}
+                          style={{background: `url('${item.image}') no-repeat center center`, backgroundSize:'cover', borderRadius: '15px'}}
+                          className="slider-content"
+                      >
+                      <div style={{position:'absolute', width:'100%', height:'100%', background: 'linear-gradient(180deg,rgba(16,7,0,.72) 36.73%,rgba(31,14,3,.1152) 124.33%)', borderRadius: '15px'}}>
+                          <div  className="inner">
+                              <h2 className='slider_descr'>{item.descr}</h2>
+                              <h3>{item.title2} {item.title}</h3>
+                              <Link to={item.link}>
+                                  <button className="btn-slider">{item.button}</button>
+                              </Link>
+                          </div>
+                      </div>
 
-                    </div>
-                </>
+                      </div>
+                  </>
 
-            ))}
+              ))
+          )}
         </Slider>
     );
 }

@@ -146,9 +146,10 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const Filter = (props) => {
   const context = React.useContext(AppState)
+  console.log(context)
 //  const hide = props.hide
   const [expanded, setExpanded] = React.useState(props.expanded || false)
-  const [showMap, setShowMap] = React.useState(false)
+  const [showMap, setShowMap] = React.useState(true)
 
   const setHidden = () => {
     if (props.hidden) {
