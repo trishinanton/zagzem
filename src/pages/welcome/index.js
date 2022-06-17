@@ -150,7 +150,7 @@ const WelcomePage = (props) => {
       </div>
 
       <Container maxWidth='lg'>
-        <h1 style={{padding:'50px 0', fontSize: '1.7rem'}}>Подбери лучшее место для загородной жизни</h1>
+        <h1 style={{padding:'50px 0', fontSize: '1.7rem', textAlign: 'center'}}>Подбери лучшее место для загородной жизни</h1>
         <div className={classes.filterBlock}>
           <div className={classes.filter}>
             <div className={classes.bg} />
@@ -162,7 +162,7 @@ const WelcomePage = (props) => {
       </Container>
                  
       <Container maxWidth='lg'>
-        <h2 id='target' style={{padding:'50px 0', fontSize: '1.7rem'}}>Почему именно мы?</h2>
+        <h2 id='target' style={{padding:'50px 0', fontSize: '1.7rem', textAlign: 'center'}}>Почему именно мы?</h2>
         <Grid container direction="row" justifyContent="space-evenly" alignItems="center" >
           <Grid item xs={12} md={6} >
             <IconBlock
