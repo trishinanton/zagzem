@@ -73,7 +73,7 @@ for (const index in buildingDirections) {
 function VillagesPage() {
   const [showFilter, setShowFilter] = useState(false)
   const [render, setRender] = useState(false)
-  
+
   const [posts, setPosts] = useState(buildingDirections)
   const [holdedPosts, setHoldedPosts] = useState(buildingDirectionsHolded)
 
@@ -86,11 +86,9 @@ function VillagesPage() {
     const postsCopied = Array.from(posts)
     const holdedPostsCopied = Array.from(holdedPosts)
     // pusing new posts to update value
-    postsCopied[index].buildings = []
-    postsCopied[index].buildings.push(...getNewPosts)
+    postsCopied[index].buildings = getNewPosts
     // updating holding posts
-    holdedPostsCopied[index].buildings = []
-    holdedPostsCopied[index].buildings.push(...deleteHoldedPosts)
+    holdedPostsCopied[index] = deleteHoldedPosts
 
     setPosts(postsCopied)
     setHoldedPosts(holdedPostsCopied)
