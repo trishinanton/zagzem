@@ -3,12 +3,25 @@ import AppState from '../AppState'
 import Grid from '@material-ui/core/Grid'
 import ReviewCard from './ReviewCard'
 
+const postsPerPage = 3;
+let arrayForHoldingPosts = []
+
 const SimilarVillages = ({uid, road, price, ...props}) => {
   const context = React.useContext(AppState)
 
+  const [postsToShow, setPostsToShow] = React.useState([]);
+  const [next, setNext] = React.useState(3);
+
+  // const loopWithSlice = (start, end) => {
+  //   const slicedPosts = ReviewCard.slice(start, end);
+  //   arrayForHoldingPosts = [...arrayForHoldingPosts, ...slicedPosts];
+  //   setPostsToShow(arrayForHoldingPosts);
+  // };
+
   // const filteredVillages = context.filteredVillages
   let filteredVillages = context.filteredVillages.filter(el => el.road === road && el.price >= (price - price*0.2) && el.price <= (price + price*0.2))
-console.log(filteredVillages)
+
+
   const newArr = []
   for (let i=0;i<filteredVillages.length;i++) {
     if (newArr.length < 3) {
@@ -38,6 +51,7 @@ console.log(filteredVillages)
     }
     }
   }
+  // eslint-disable-next-line no-lone-blocks
   {if (filteredVillages.length < 2) {
     return ''
   }else {
@@ -48,7 +62,6 @@ console.log(filteredVillages)
             {/*<div style={{display:'flex', flexDirection:'row', justifyContent:'space-evenly'}}>*/}
             {newArr}
             {/*</div>*/}
-
           </Grid>
         </>
 

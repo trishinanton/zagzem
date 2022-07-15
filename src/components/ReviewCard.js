@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
@@ -10,6 +11,7 @@ import Grid from '@material-ui/core/Grid'
 import Icons from './Icons'
 import IndicatorDots from './IndicatorDots'
 import AppState from "../AppState";
+import LazyLoad from 'react-lazyload';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -115,18 +117,21 @@ export default function ReviewCard(props) {
 
   for (let i=0;i<bgs.length;i++) {
     slides.push(
-      <div
-        key={'bgil'+i}
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          backgroundImage: `url(${bgs[i]})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-        }}
-      />
+      <LazyLoad>
+        <img
+          key={'bgil'+i}
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            backgroundImage: `url(${bgs[i]})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            objectFit: 'cover'
+          }}
+        />
+      </LazyLoad>
     )
   }
 

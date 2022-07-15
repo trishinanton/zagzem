@@ -67,6 +67,11 @@ const useStyles = makeStyles((theme) => ({
     padding: '15px',
     color: '#fff',
   },
+  welcomeHeader: {
+    padding: '50px 0',
+    fontSize: '1.7rem',
+    textAlign: 'center',
+  }
 }))
 
 
@@ -150,7 +155,7 @@ const WelcomePage = (props) => {
       </div>
 
       <Container maxWidth='lg'>
-        <h3 style={{padding:'50px 0'}}>Подбери лучшее место для загородной жизни</h3>
+        <h1 className={classes.welcomeHeader}>Подбери лучшее место для загородной жизни</h1>
         <div className={classes.filterBlock}>
           <div className={classes.filter}>
             <div className={classes.bg} />
@@ -160,9 +165,9 @@ const WelcomePage = (props) => {
           </div>
         </div>
       </Container>
-
+                 
       <Container maxWidth='lg'>
-        <h3 id='target' style={{padding:'50px 0'}}>Почему именно мы?</h3>
+        <h2 id='target' className={classes.welcomeHeader}>Почему именно мы?</h2>
         <Grid container direction="row" justifyContent="space-evenly" alignItems="center" >
           <Grid item xs={12} md={6} >
             <IconBlock

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useContext, forwardRef} from 'react';
 import { makeStyles } from '@material-ui/styles'
 import { Link } from 'react-router-dom'
 import AppState from '../../AppState'
@@ -139,16 +139,16 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const Transition = React.forwardRef(function Transition(props, ref) {
+const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 
 const Filter = (props) => {
-  const context = React.useContext(AppState)
+  const context = useContext(AppState)
 //  const hide = props.hide
-  const [expanded, setExpanded] = React.useState(props.expanded || false)
-  const [showMap, setShowMap] = React.useState(false)
+  const [expanded, setExpanded] = useState(props.expanded || false)
+  const [showMap, setShowMap] = useState(true)
 
   const setHidden = () => {
     if (props.hidden) {

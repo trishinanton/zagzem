@@ -117,10 +117,10 @@ export default function Chooser(props) {
   useEffect(()=> {
       setPrice(context.selectedPriceFrom)
 
-      console.log(context.selectedPriceFrom)
-      console.log(context.selectedRoads)
-      console.log(context.selectedAreas)
-      console.log(context.selectedFromMkad)
+      // console.log(context.selectedPriceFrom)
+      // console.log(context.selectedRoads)
+      // console.log(context.selectedAreas)
+      // console.log(context.selectedFromMkad)
 
   },[context.selectedPriceFrom,context.selectedRoads.length, context.selectedAreas.length, context.selectedFromMkad])
 

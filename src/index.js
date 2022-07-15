@@ -12,13 +12,10 @@ import transplit from "./helpers/transplit";
 import uuid from "react-uuid";
 import {BrowserRouter} from "react-router-dom";
 
-
 export const villages = []
-// let url = 'http://poselki/wp-json/wp/v2/poselki';
-// let url = 'https://good-production.ru/projects-in-work/zagzem/wp-json/wp/v2/poselki?per_page=100';
-// let url = 'https://zagzem.ru/zagzem-back/wp-json/wp/v2/poselki?per_page=100';
+export const villagesThumbnail = []
 const url = 'https://skgrouptrans.ru/gp-wp-projects/wp-json/wp/v2/poselki?per_page=100';
-
+export const slider = []
 
 let theme = createTheme({
   palette: {
@@ -52,12 +49,23 @@ function deleteEmptyString(obj){
 
 function deleteFalseFromObj(obj) {
   let result = {}
+
   let arr = Object.entries(obj).filter(el => el[1] !== false)
 
   for( let i = 0; i < arr.length; i++) {
-    result[arr[i][0]] = arr[i][1]
+    result[arr[i][0]] = typeof (arr[i][1]) === 'object' ? arr[i][1].url : arr[i][1]
   }
+  return result
+}
 
+function deleteFalseFromThumbnailObj(obj) {
+  let result = {}
+
+  let arr = Object.entries(obj).filter(el => el[1] !== false)
+
+  for (let i = 0; i < arr.length; i++) {
+    result[arr[i][0]] = typeof (arr[i][1]) === 'object' ? arr[i][1].sizes.medium_large : arr[i][1]
+  }
   return result
 }
 
@@ -70,30 +78,56 @@ function changeObjInNumber(obj) {
 async function getDataFromWp(url) {
   try {
     let response = await fetch(url);
+    
     if(response.ok) {
+      
       let arrFromWp = await response.json()
+      
       arrFromWp.forEach(el => villages.push({
-        ...el.acf,
+        ...el?.acf,
         uid: uuid(),
-        uname: transplit(el.acf.name),
-        area: el.acf.new_area ? el.acf.new_area : el.acf.area || null,
-        road: el.acf.new_road ? el.acf.new_road : el.acf.road,
-        fromMkad: +el.acf.fromMkad,
-        totalLands: +el.acf.totalLands,
-        price: +el.acf.price,
-        communications: deleteEmptyString(el.acf.communications),
-        infrastructure: deleteEmptyString(el.acf.infrastructure),
-        coords: [el.acf.coords.latitude, el.acf.coords.longitude],
-        bgs: Object.values( deleteFalseFromObj(el.acf.bgs) ),
-        descr: [el.acf.descr],
-        roadTo: changeObjInNumber(el.acf.roadTo),
-        roadIn: changeObjInNumber(el.acf.roadIn),
-        type: changeObjInNumber(el.acf.type),
-        permittedUse: Object.entries(el.acf.permittedUse).filter(elem => elem[1] === true)[0] ,
-        priceLands: Object.values(el.acf.priceLands).map(e => +e),
-        sideOfMkad: changeObjInNumber(el.acf.sideOfMkad)
+        uname: transplit(el?.acf.name),
+        area: el?.acf.new_area ? el?.acf.new_area : el?.acf.area || null,
+        road: el?.acf.new_road ? el?.acf.new_road : el?.acf.road,
+        fromMkad: +el?.acf.fromMkad,
+        totalLands: +el?.acf.totalLands,
+        price: +el?.acf.price,
+        communications: deleteEmptyString(el?.acf.communications),
+        infrastructure: deleteEmptyString(el?.acf.infrastructure),
+        coords: [el?.acf.coords.latitude, el?.acf.coords.longitude],
+        bgs: Object.values(deleteFalseFromObj(el?.acf.bgs)),
+        descr: [el?.acf.descr],
+        roadTo: changeObjInNumber(el?.acf.roadTo),
+        roadIn: changeObjInNumber(el?.acf.roadIn),
+        type: changeObjInNumber(el?.acf.type),
+        permittedUse: Object.entries(el?.acf.permittedUse).filter(elem => elem[1] === true)[0] ,
+        priceLands: Object.values(el?.acf.priceLands).map(e => +e),
+        sideOfMkad: changeObjInNumber(el?.acf.sideOfMkad),
+        key: transplit(el?.acf.name),
       }))
-      let a = villages
+
+      arrFromWp.forEach(el => villagesThumbnail.push({
+        ...el?.acf,
+        uid: uuid(),
+        uname: transplit(el?.acf.name),
+        area: el?.acf.new_area ? el?.acf.new_area : el?.acf.area || null,
+        road: el?.acf.new_road ? el?.acf.new_road : el?.acf.road,
+        fromMkad: +el?.acf.fromMkad,
+        totalLands: +el?.acf.totalLands,
+        price: +el?.acf.price,
+        communications: deleteEmptyString(el?.acf.communications),
+        infrastructure: deleteEmptyString(el?.acf.infrastructure),
+        coords: [el?.acf.coords.latitude, el?.acf.coords.longitude],
+        bgs: Object.values(deleteFalseFromThumbnailObj(el?.acf.bgs)),
+        descr: [el?.acf.descr],
+        roadTo: changeObjInNumber(el?.acf.roadTo),
+        roadIn: changeObjInNumber(el?.acf.roadIn),
+        type: changeObjInNumber(el?.acf.type),
+        permittedUse: Object.entries(el?.acf.permittedUse).filter(elem => elem[1] === true)[0],
+        priceLands: Object.values(el?.acf.priceLands).map(e => +e),
+        sideOfMkad: changeObjInNumber(el?.acf.sideOfMkad),
+        key: transplit(el?.acf.name),
+      }))
 
       const app = (
           <BrowserRouter basename={process.env.BASE_URL}>

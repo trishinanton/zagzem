@@ -108,9 +108,10 @@ const CallbackForm = (props) => {
       alert('Заполните обязательные поля')
       return
     }
-
     console.log('submit, name', name)
     console.log('submit, email', email)
+    // Yandex.Metrika
+    window.ym(70872661, 'reachGoal', 'order1');
 
   }
 
@@ -129,7 +130,7 @@ const CallbackForm = (props) => {
       <div style={{margin: '15px'}} className={classes.root}>
         <Grid container>
           <Grid item xs={12}>
-            <div className={classes.bodyForm}>
+            <div className={classes.bodyForm} style={{transform: 'initial'}}>
               <Box my={2} mx={4}>
                 <center>
                   <h3 style={{fontSize:'27px'}}>Если у вас есть вопросы или предложения, оставьте свои данные ниже и мы свяжемся с вами</h3>

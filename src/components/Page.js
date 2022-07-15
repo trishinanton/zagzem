@@ -159,7 +159,7 @@ export default function Page (props){
   const [showGenplan, setShowGenplan] = React.useState(false)
   const [showSendPlan, setShowSendPlan] = React.useState(false)
   const [showForm, setShowForm] = React.useState(false)
-  console.log('village.permittedUse', village.permittedUse)
+  // console.log('village.permittedUse', village.permittedUse)
 
   const waysToGetList = []
   const communications = village.communications
@@ -732,7 +732,6 @@ export default function Page (props){
           <Grid item xs={12} md={4}>
             <div className={classes.wrapperInfo}>
               {infoList}
-              {console.log(infoList)}
             </div>
             <div style={{margin:'30px 15px'}}>
               <center>
