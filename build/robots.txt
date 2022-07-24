@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: *js*
+
+User-agent: Yandex
+Allow: /
+Disallow: *js*
+
+User-agent: Googlebot
+Allow: /
+Disallow: *js*
+
+
+Sitemap: https://zagzem.ru/sitemap.xml
