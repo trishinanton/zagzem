@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://zagzem.ru/",
+  "homepage": "/build/",
   "proxy": "https://zagzem.ru/",
   "type:": "module",
   "dependencies": {

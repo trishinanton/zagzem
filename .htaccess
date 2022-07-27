@@ -1,0 +1,35 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+
+
+RewriteCond %{HTTP_HOST} ^www.zagzem.ru$
+RewriteRule ^(.*) https://zagzem.ru/$1 [R=301]
+
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# RewriteCond %{HTTPS} !on
+# RewriteRule (.*) https://zagzem.ru%{REQUEST_URI}
+
+# # RewriteCond %{HTTP_HOST} !^www\..* [NC]
+# # RewriteRule ^(.*) http://www.%{HTTP_HOST}/%{REQUEST_URI} [L,R=301]
+
+# RewriteCond %{HTTP_HOST} ^www\..* [NC]
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# GP | сделал кастомный редирект
+# RewriteCond %{REQUEST_FILENAME} -s [OR]
+# RewriteCond %{REQUEST_FILENAME} -l [OR]
+# RewriteCond %{REQUEST_FILENAME} -d
+# RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
+
+
+
+</IfModule>
+
+
+
