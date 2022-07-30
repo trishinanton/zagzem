@@ -255,6 +255,7 @@ export default function ReviewCard(props) {
 
       <Link
           to={`/village/${uname}`}
+          onClick={props.rerender}
       >
 
       <CardContent className={classes.cardContent}>

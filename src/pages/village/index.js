@@ -10,9 +10,12 @@ class VillagePage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-    }
+      render: ''
+    };
   }
-
+rerender() {
+    this.setState({render: window.location.pathname})
+}
   componentDidMount() {
     window.scrollTo(0, 0)
   }
@@ -24,9 +27,11 @@ class VillagePage extends React.Component {
   componentWillUnmount() {
   }
 
+
   render() {
-    const path = document.location.pathname
+    const path = window.location.pathname
     const uname = path.substr(9)
+    console.log('unamenew', uname)
     let village = []
 
     const villages = this.context.villages
@@ -47,7 +52,7 @@ class VillagePage extends React.Component {
         >
           {/*<h3 style={{padding:'25px 0 15px 15px'}}>Если вы смотрите этот поселок, то вам подойдут:</h3>*/}
           <Box m={2}>
-            <SimilarVillages uid={village.uid} road={village.road} price={village.price}/>
+            <SimilarVillages rerender={this.rerender} uid={village.uid} road={village.road} price={village.price}/>
           </Box>
         </Container>
       </>
