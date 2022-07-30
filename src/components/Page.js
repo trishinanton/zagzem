@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -14,6 +14,7 @@ import CallbackPlanForm from './CallbackPlanForm'
 import testImage from '../img/images/villaLabel.png'
 import CallbackFormPopUp from "./CallbackFormPopUp";
 import Slide from "@material-ui/core/Slide";
+import {useLocation} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   name: {
@@ -155,6 +156,7 @@ const ItemMapInfo = ({ name, value }) => {
 }
 
 export default function Page (props){
+  console.log('newPage render',props.village)
   const village = props.village
   const [showGenplan, setShowGenplan] = React.useState(false)
   const [showSendPlan, setShowSendPlan] = React.useState(false)
@@ -674,6 +676,14 @@ export default function Page (props){
   useEffect(()=>{
     document.getElementById('description-page').innerHTML=`${infoDescr[0].props.children}`
   },[])
+
+  const {pathname} = useLocation()
+  console.log('pathnew', pathname)
+  const [url, setUrl] = useState('');
+
+  useEffect(()  => {
+    setUrl(pathname)
+  }, [pathname])
   const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
   });

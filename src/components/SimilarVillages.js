@@ -6,7 +6,7 @@ import ReviewCard from './ReviewCard'
 const postsPerPage = 3;
 let arrayForHoldingPosts = []
 
-const SimilarVillages = ({uid, road, price, ...props}) => {
+const SimilarVillages = ({rerender, uid, road, price, ...props}) => {
   const context = React.useContext(AppState)
 
   const [postsToShow, setPostsToShow] = React.useState([]);
@@ -45,6 +45,7 @@ const SimilarVillages = ({uid, road, price, ...props}) => {
             priceLands={filteredVillages[i].priceLands}
             sideOfMkad={filteredVillages[i].sideOfMkad}
             communications={filteredVillages[i].communications}
+            rerender={rerender}
           />
         </Grid>
       )
