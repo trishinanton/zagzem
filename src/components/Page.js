@@ -177,6 +177,7 @@ export default function Page(props) {
     const roadIn = village.roadIn
     const roadTo = village.roadTo
 
+
     const planImg = plan || planPartners
 
     const classes = useStyles({planImg})
