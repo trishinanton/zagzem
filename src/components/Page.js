@@ -172,11 +172,14 @@ export default function Page(props) {
     const coords = village.coords || [0, 0]
     const bgs = village.bgs
     const plan = village.plan
+    const planPartners = village.plan_partners
     const safety = village.safety
     const roadIn = village.roadIn
     const roadTo = village.roadTo
 
-    const classes = useStyles({plan})
+    const planImg = plan || planPartners || null
+
+    const classes = useStyles({planImg})
 
     let infoCoords = []
     if (coords) {
@@ -799,16 +802,19 @@ export default function Page(props) {
                 <div className={classes.btns}>
                     <Grid container>
                         <Grid item xs={12} md={4}>
-                            <button className='main-button' style={{
-                                width: '94%',
-                                fontSize: '99%',
-                                fontWeight: 'bold',
-                                margin: '10px 5%'
-                            }}
-                                    onClick={() => setShowGenplan(true)}
-                            >
-                                Планировка поселка
-                            </button>
+                            {
+                                planImg && <button className='main-button' style={{
+                                    width: '94%',
+                                    fontSize: '99%',
+                                    fontWeight: 'bold',
+                                    margin: '10px 5%'
+                                }}
+                                                   onClick={() => setShowGenplan(true)}
+                                >
+                                    Планировка поселка
+                                </button>
+                            }
+
                         </Grid>
                         <Grid item xs={12} md={4}>
                             <button className='main-button' style={{
@@ -938,7 +944,7 @@ export default function Page(props) {
             >
 
                 <div className={classes.genplan}>
-                    <ImageZoom src={plan} alt="Genplan village" zoom={200}/>
+                    <ImageZoom src={planImg} alt="Genplan village" zoom={200}/>
                 </div>
 
             </Dialog>
