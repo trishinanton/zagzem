@@ -1,199 +1,164 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <script src="index.js" defer></script>
-    <meta charset="utf-8" />
-    <meta name="yandex-verification" content="57c7109ea1252ece" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="theme-color" content="#FFFFFF" />
-    <meta name="description" content="Мы компания «Загородные земли» и мы предлагаем открытое сотрудничество! Мы оказываем услуги по созданию и реализации коттеджных и дачных поселков в Москвоской области" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function (m, e, t, r, i, k, a) {
-        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-        m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-      })
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-      ym(70872661, "init", {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-        webvisor: true
-      });
+<head>
+  <!-- <script src="index.js" defer></script> -->
+  <meta charset="utf-8" />
+  <meta name="yandex-verification" content="57c7109ea1252ece" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="description"
+    content="Мы компания «Загородные земли» и мы предлагаем открытое сотрудничество! Мы оказываем услуги по созданию и реализации коттеджных и дачных поселков в Москвоской области" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(70872661, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+  <title>Земельные участки в Московской области | Загородные земли</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;subset=latin,cyrillic"
+    rel="stylesheet">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=fa01ad65-ac36-4d49-bef1-253633201cf8&lang=ru_RU"
+    type="text/javascript">
     </script>
-    <!-- /Yandex.Metrika counter -->
-    <title>Земельные участки в Московской области | Загородные земли</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;subset=latin,cyrillic" rel="stylesheet">
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=fa01ad65-ac36-4d49-bef1-253633201cf8&lang=ru_RU" type="text/javascript">
-    </script>
 
 
-<!--    Connect service worker-->
-<!--    <script>-->
-<!--      if ('serviceWorker' in navigator) {-->
-<!--        navigator.serviceWorker-->
-<!--                .register('%PUBLIC_URL%/sw.js')-->
+  <!--    Connect service worker-->
+  <!--    <script>-->
+  <!--      if ('serviceWorker' in navigator) {-->
+  <!--        navigator.serviceWorker-->
+  <!--                .register('%PUBLIC_URL%/sw.js')-->
 
-<!--                .then(() => { console.log('Service Worker Registered'); });-->
-<!--      }-->
-<!--    </script>-->
-    <!-- Marquiz script start -->
-    <!-- Marquiz script start -->
-    <!-- Marquiz script start -->
-    <script>
-      if (window.location.href === 'https://trishinanton.github.io/zagzem-client/#/') {
-        (function(w, d, s, o){
-          ( window.location.href)
-          var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
-            if (document.readyState !== 'loading') Marquiz.init(o);
-            else document.addEventListener("DOMContentLoaded", function() {
-              Marquiz.init(o);
-            });
-          };
-          d.head.insertBefore(j, d.head.firstElementChild);
-        })(window, document, 'script', {
-                  host: '//quiz.marquiz.ru',
-                  region: 'eu',
-                  id: '5fdf6af430ab4d0044991f83',
-                  autoOpen: 1,
-                  autoOpenFreq: 'always',
-                  openOnExit: false,
-                  disableOnMobile: false
-                }
-        );
-      }
+  <!--                .then(() => { console.log('Service Worker Registered'); });-->
+  <!--      }-->
+  <!--    </script>-->
+  <!-- Marquiz script start -->
+  <script>
+      // if (window.location.href === 'https://trishinanton.github.io/zagzem-client/#/') {
+      //   (function(w, d, s, o){
+      //     ( window.location.href)
+      //     var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
+      //       if (document.readyState !== 'loading') Marquiz.init(o);
+      //       else document.addEventListener("DOMContentLoaded", function() {
+      //         Marquiz.init(o);
+      //       });
+      //     };
+      //     d.head.insertBefore(j, d.head.firstElementChild);
+      //   })(window, document, 'script', {
+      //             host: '//quiz.marquiz.ru',
+      //             region: 'eu',
+      //             id: '5fdf6af430ab4d0044991f83',
+      //             autoOpen: 1,
+      //             autoOpenFreq: 'always',
+      //             openOnExit: false,
+      //             disableOnMobile: false
+      //           }
+      //   );
+      // }
 
-    </script>
-    <!-- Marquiz script end -->
-<!--    <script>-->
-<!--      (function(w, d, s, o){-->
-<!--        var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {-->
-<!--          if (document.readyState !== 'loading') Marquiz.init(o);-->
-<!--          else document.addEventListener("DOMContentLoaded", function() {-->
-<!--            Marquiz.init(o);-->
-<!--          });-->
-<!--        };-->
-<!--        d.head.insertBefore(j, d.head.firstElementChild);-->
-<!--      })(window, document, 'script', {-->
-<!--                host: '//quiz.marquiz.ru',-->
-<!--                region: 'eu',-->
-<!--                id: '5fdf6af430ab4d0044991f83',-->
-<!--                autoOpen: 1,-->
-<!--                autoOpenFreq: 'once',-->
-<!--                openOnExit: false,-->
-<!--                disableOnMobile: false-->
-<!--              }-->
-<!--      );-->
-<!--    </script>-->
-    <!-- Marquiz script end -->
-<!--    <script>-->
-<!--      (function(w, d, s, o){-->
-<!--        var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {-->
-<!--          if (document.readyState !== 'loading') Marquiz.init(o);-->
-<!--          else document.addEventListener("DOMContentLoaded", function() {-->
-<!--            Marquiz.init(o);-->
-<!--          });-->
-<!--        };-->
-<!--        d.head.insertBefore(j, d.head.firstElementChild);-->
-<!--      })(window, document, 'script', {-->
-<!--        host: '//quiz.marquiz.ru',-->
-<!--        region: 'eu',-->
-<!--        id: '5fdf6af430ab4d0044991f83',-->
-<!--        autoOpen: true,-->
-<!--        autoOpenFreq: 'once',-->
-<!--        openOnExit: false,-->
-<!--        disableOnMobile: false-->
-<!--      }-->
-<!--    );-->
-<!--  </script>-->
+  </script>
   <!-- Marquiz script end -->
   <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(84836341, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/84836341" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    ym(84836341, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/84836341" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XZBXSY1SBL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZBXSY1SBL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-XZBXSY1SBL');
-</script>
+    gtag('config', 'G-XZBXSY1SBL');
+  </script>
 
-  </head>
-  <body style="font-family: 'Montserrat'; letter-spacing: 0; position: relative ">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-<!--    <button-->
-<!--            id="btnInstall"-->
-<!--            class="main-button"-->
-<!--            disabled-->
-<!--            style="position: absolute; bottom: 269px; z-index: 1;"-->
-<!--    >-->
-<!--      Скачать приложение-->
-<!--    </button>-->
+</head>
 
-    <!-- Yandex.Metrika counter -->
-    <noscript>
-      <div><img src="https://mc.yandex.ru/watch/70872661" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
-    <!-- Yandex.Metrika counter -->
+<body style="font-family: 'Montserrat'; letter-spacing: 0; position: relative ">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <!--    <button-->
+  <!--            id="btnInstall"-->
+  <!--            class="main-button"-->
+  <!--            disabled-->
+  <!--            style="position: absolute; bottom: 269px; z-index: 1;"-->
+  <!--    >-->
+  <!--      Скачать приложение-->
+  <!--    </button>-->
 
-    <div id="root" style="overflow-x: hidden"></div>
-    <script>
-      window.addEventListener('beforeinstallprompt', event => {
-        console.log('beforeinstallprompt event was fired');
+  <!-- Yandex.Metrika counter -->
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/70872661" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- Yandex.Metrika counter -->
 
-        // Prevent Chrome <= 67 from automatically showing the prompt
-        event.preventDefault();
+  <div id="root" style="overflow-x: hidden"></div>
+  <script>
+    window.addEventListener('beforeinstallprompt', event => {
+      console.log('beforeinstallprompt event was fired');
 
-        // Stash the event so it can be triggered later.
-        this.installPromptEvent = event;
-        console.log(`this: ${this}`)
+      // Prevent Chrome <= 67 from automatically showing the prompt
+      event.preventDefault();
 
-        // Update the install UI to notify the user app can be installed
-        btnInstall.disabled = false;
+      // Stash the event so it can be triggered later.
+      this.installPromptEvent = event;
+      console.log(`this: ${this}`)
+
+      // Update the install UI to notify the user app can be installed
+      btnInstall.disabled = false;
+    });
+
+    const btnInstall = document.querySelector('#btnInstall');
+
+    btnInstall.addEventListener('click', function () {
+      console.log('click')
+      // Update the install UI to remove the install button
+      btnInstall.disabled = true;
+
+      // Show the modal add to home screen dialog
+      installPromptEvent.prompt();
+
+      // Wait for the user to respond to the prompt
+      installPromptEvent.userChoice.then(choice => {
+        if (choice.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
+        // Clear the saved prompt since it can't be used again
+        this.installPromptEvent = null;
       });
+    });
+  </script>
+</body>
 
-      const btnInstall = document.querySelector('#btnInstall');
-
-      btnInstall.addEventListener('click', function () {
-        console.log('click')
-        // Update the install UI to remove the install button
-        btnInstall.disabled = true;
-
-        // Show the modal add to home screen dialog
-        installPromptEvent.prompt();
-
-        // Wait for the user to respond to the prompt
-        installPromptEvent.userChoice.then(choice => {
-            if (choice.outcome === 'accepted') {
-                console.log('User accepted the A2HS prompt');
-            } else {
-                console.log('User dismissed the A2HS prompt');
-            }
-            // Clear the saved prompt since it can't be used again
-            this.installPromptEvent = null;
-        });
-      });
-    </script>
-  </body>
 </html>
-

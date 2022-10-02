@@ -33,7 +33,9 @@ export function useFilterClicked(props) {
 
 export const villages = []
 export const villagesThumbnail = []
-const url = 'https://skgrouptrans.ru/gp-wp-projects/wp-json/wp/v2/poselki?per_page=100';
+// const url = 'https://skgrouptrans.ru/gp-wp-projects/wp-json/wp/v2/poselki?per_page=100';
+const url = '/wp-backend/wp-json/wp/v2/poselki?per_page=100';
+
 export const slider = []
 
 let theme = createTheme({
