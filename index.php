@@ -1,5 +1,4 @@
 <?php
-
 /* Попытка на беке скидывать кеш*/
 if(preg_match('#^www\.*#', strval($_SERVER['HTTP_HOST']))){
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
@@ -15,10 +14,8 @@ if(preg_match('#^www\.*#', strval($_SERVER['HTTP_HOST']))){
     header('Content-Type: application/xml');
     $xml = file_get_contents('build/sitemap.xml');
     echo $xml;
-}elseif($_SERVER['REQUEST_URI'] == '/google5bb194f153983f91.html'){    
+}elseif($_SERVER['REQUEST_URI'] == '/google5bb194f153983f91.html'){
     include( 'google5bb194f153983f91.html' );
-}elseif(strpos($_SERVER['REQUEST_URI'],'wp-backend')){    
-    include( 'wp-backend/index.php' );
 }else{
     include( 'build/index.html' );
 }
