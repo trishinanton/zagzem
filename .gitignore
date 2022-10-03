@@ -1,5 +1,4 @@
-# WP
-/wp-backend
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # archives
 *.gz
@@ -27,7 +26,4 @@ yarn-debug.log*
 yarn-error.log*
 
 /.idea
-
-# cache
-*cache*
 .eslintcache
