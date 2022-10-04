@@ -1,14 +1,17 @@
 User-agent: *
 Allow: /
 Disallow: *js*
+Disallow: /wp-backend/
 
 User-agent: Yandex
 Allow: /
 Disallow: *js*
+Disallow: /wp-backend/
 
 User-agent: Googlebot
 Allow: /
 Disallow: *js*
+Disallow: /wp-backend/
 
 
 Sitemap: https://zagzem.ru/sitemap.xml
