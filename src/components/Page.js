@@ -16,6 +16,8 @@ import CallbackFormPopUp from "./CallbackFormPopUp";
 import Slide from "@material-ui/core/Slide";
 import {useLocation} from "react-router-dom";
 
+import ImageZoom from "react-image-zooom";
+
 const useStyles = makeStyles((theme) => ({
   name: {
     transition: 'all 0.3s ease-out',
@@ -51,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '30px 0px 30px 0px',
     background: 'none',
     borderRadius: '15px',
-  },  
+  },
   mapSection: {
     position:'relative',
     margin: '30px 0px 30px 0px',
@@ -73,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px 20px',
     margin: '5px 15px',
     textAlign: 'center',
-    '&:hover': { 
+    '&:hover': {
       background: '#0197fd',
       color: '#fff',
     },
@@ -134,15 +136,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '15px',
     padding: '40px 25px',
   },
-  genplan: (props=>({
+  genplan: {
     position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '100%',
-    height: '95vh',
-    background: `url(${props.plan})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'contain',
-  }))
+  }
 }));
 
 const ItemMapInfo = ({ name, value }) => {
@@ -172,11 +172,15 @@ export default function Page (props){
   const coords = village.coords || [0,0]
   const bgs = village.bgs
   const plan = village.plan
+  const planPartners = village.plan_partners
   const safety = village.safety
   const roadIn = village.roadIn
   const roadTo = village.roadTo
 
-  const classes = useStyles({ plan })
+
+  const planImg = plan || planPartners
+
+  const classes = useStyles({planImg})
 
   let infoCoords = []
   if (coords) {
@@ -251,7 +255,7 @@ export default function Page (props){
       )
     }
   }
-   
+
   const infoList = []
   const infoListInfrastructure = []
   const infoListNature = []
@@ -379,7 +383,7 @@ export default function Page (props){
         value='В поселке дорога из битого кирпича'
       />
     )
-  } 
+  }
   if (roadIn === 4) {
     infoListRoad.push(
       <IconButton
@@ -405,7 +409,7 @@ export default function Page (props){
 
   for (let i=0;i<kk.length;i++) {
     const key = kk[i]
-    const value = communications[key] || '' 
+    const value = communications[key] || ''
     if (key === '1') {
       infoList.push(
         <IconButton
@@ -417,7 +421,7 @@ export default function Page (props){
           value={'Электрофикация '+value}
         />
       )
-    } 
+    }
     if (key === '2') {
       infoList.push(
         <IconButton
@@ -572,7 +576,7 @@ export default function Page (props){
           />
         )
       }
-      if (key === '2') {   
+      if (key === '2') {
         infoListSafety.push(
           <IconButton
             key={key+'sasc'}
@@ -649,7 +653,7 @@ export default function Page (props){
 
   let rosreestrLink = ''
   if (village.rosreestr) {
-    rosreestrLink = village.rosreestr 
+    rosreestrLink = village.rosreestr
   }
 
   const slides = []
@@ -766,11 +770,18 @@ export default function Page (props){
         <div className={classes.btns}>
           <Grid container>
             <Grid item xs={12} md={4}>
-              <button className='main-button' style={{width:'94%',fontSize:'99%',fontWeight:'bold', margin:'10px 5%'}}
-                onClick={()=>setShowGenplan(true)}
-              >
-                Планировка поселка
-              </button>
+              {
+                  planImg && <button className='main-button' style={{
+                    width: '94%',
+                    fontSize: '99%',
+                    fontWeight: 'bold',
+                    margin: '10px 5%'
+                  }}
+                                     onClick={() => setShowGenplan(true)}
+                  >
+                    Планировка поселка
+                  </button>
+              }
             </Grid>
             <Grid item xs={12} md={4}>
               <button className='main-button' style={{width:'94%',fontSize:'99%',fontWeight:'bold', margin:'10px 5%'}}
@@ -791,7 +802,7 @@ export default function Page (props){
       </Container>
 
       <Container maxWidth='lg'>
-        <Grid container spacing={3}> 
+        <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <div className={classes.wrapperInfo}>
               <h4 style={{padding:'15px'}}>Дороги</h4>
@@ -851,7 +862,7 @@ export default function Page (props){
                 <ItemMapInfo
                   name='Ближайший населенный пункт'
                   value={nearSettlementName + ' - ' + nearSettlementDist}
-                />        
+                />
                 <ItemMapInfo
                   name='Ближайший город'
                   value={nearTownName + ' - ' + nearTownDist}
@@ -865,7 +876,7 @@ export default function Page (props){
           </Grid>
         </div>
       </Container>
-    
+
       <Container maxWidth='lg' style={{margin: '100px 0'}}>
         <div className={classes.subInfo}>
           <Grid container justifyContent='space-around'>
@@ -881,12 +892,16 @@ export default function Page (props){
       </Container>
 
       <Dialog
-        fullWidth={true}
-        maxWidth='xl'
-        open={showGenplan}
-        onClose={()=>setShowGenplan(false)}
+          fullWidth={true}
+          maxWidth='xl'
+          open={showGenplan}
+          onClose={() => setShowGenplan(false)}
       >
-        <div className={classes.genplan} />
+
+        <div className={classes.genplan}>
+          <ImageZoom src={planImg} alt="Genplan village" zoom={200}/>
+        </div>
+
       </Dialog>
 
       <Dialog
@@ -894,7 +909,7 @@ export default function Page (props){
         maxWidth='sm'
         open={showSendPlan}
         onClose={()=>setShowSendPlan(false)}
-      > 
+      >
         <CallbackPlanForm village={village.name}/>
       </Dialog>
     </>
