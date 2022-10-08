@@ -17,6 +17,7 @@ import Slide from "@material-ui/core/Slide";
 import {useLocation} from "react-router-dom";
 
 import ImageZoom from "react-image-zooom";
+import { isImage } from "../helpers/isImage";
 
 const useStyles = makeStyles((theme) => ({
   name: {
@@ -142,6 +143,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+    padding: '10px',
+  },
+  iframe: {
+    width: "100%",
+    height: "30rem",
+    borderRadius: "5px",
+    borderWidth: '0',
   }
 }));
 
@@ -179,6 +187,8 @@ export default function Page (props){
 
 
   const planImg = plan || planPartners
+
+  const isImageData = isImage(planImg)
 
   const classes = useStyles({planImg})
 
@@ -891,18 +901,25 @@ export default function Page (props){
         </div>
       </Container>
 
-      <Dialog
-          fullWidth={true}
-          maxWidth='xl'
-          open={showGenplan}
-          onClose={() => setShowGenplan(false)}
-      >
+        {
 
-        <div className={classes.genplan}>
-          <ImageZoom src={planImg} alt="Genplan village" zoom={200}/>
-        </div>
+            planImg && <Dialog
+                fullWidth={true}
+                maxWidth='xl'
+                open={showGenplan}
+                onClose={() => setShowGenplan(false)}
+            >
 
-      </Dialog>
+                <div className={classes.genplan}>
+                    {
+                        isImageData
+                            ? <ImageZoom src={planImg} alt="Genplan village" zoom={200}/>
+                            : <iframe className={classes.iframe} src={planImg}/>
+                    }
+                </div>
+            </Dialog>
+
+        }
 
       <Dialog
         fullWidth={true}

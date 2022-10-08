@@ -153,7 +153,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: '#919fa3',
     [theme.breakpoints.up('md')]: {
-      textAlign: 'right' 
+      textAlign: 'right'
     }
   },
   logo: {
@@ -226,7 +226,7 @@ export default function StickyFooter() {
               <Grid item xs={12} md={5} />
               <Grid item xs={12} md={7}>
                 <Grid container justifyContent='center'>
-                  <Grid container justifyContent='center' alignItems="center" flexDirection='row' className={classes.icons}>
+                  <Grid container justifyContent='center' alignItems="center" direction='row' className={classes.icons}>
 
                     <div className={classes.descr}>
                       <h5 className='light-text' style={{padding:'0 10px'}}>Следите за нами в </h5>
@@ -298,7 +298,7 @@ export default function StickyFooter() {
         maxWidth='sm'
         TransitionComponent={Transition}
         onClose={()=>setShowDialog(false)}
-      > 
+      >
         <CallbackForm />
       </Dialog>
     </footer>
