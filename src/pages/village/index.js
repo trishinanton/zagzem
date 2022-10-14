@@ -1,63 +1,51 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import AppState from '../../AppState'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Page from '../../components/Page'
 import SimilarVillages from '../../components/SimilarVillages'
+import {useLocation} from "react-router-dom";
 
-class VillagePage extends React.Component {
-  static contextType = AppState
-  constructor(props) {
-    super(props)
-    this.state = {
-      render: ''
-    };
-  }
-rerender() {
-    this.setState({render: window.location.pathname})
-}
-  componentDidMount() {
-    window.scrollTo(0, 0)
-  }
+const VillagePage = () => {
+    const context = useContext(AppState)
+    const path = useLocation()
 
-  componentDidUpdate() {
-    window.scrollTo(0, 0)
-  }
+    const uname = path.pathname.substr(9)
+    const [village, setVillage] = useState({})
+    const villages = context.villages
 
-  componentWillUnmount() {
-  }
+    useEffect(() => {
+        window.scrollTo(0, 0)
 
+        for (let i = 0; i < villages.length; i++) {
+            if (villages[i].uname === uname) {
+                setVillage(villages[i])
+            }
+        }
+        context.selectedVillage = village.name
 
-  render() {
-    const path = window.location.pathname
-    const uname = path.substr(9)
-    console.log('unamenew', uname)
-    let village = []
-
-    const villages = this.context.villages
-    for (let i=0;i<villages.length;i++) {
-      if (villages[i].uname === uname) {
-        village = villages[i]
-      }
-    }
-    this.context.selectedVillage = village.name
+    }, [path])
 
     return (
-      <>
-        <Page village={village} />
-        <Container maxWidth='lg'
-          style={{
-            padding: '15px 0'
-          }}
-        >
-          {/*<h3 style={{padding:'25px 0 15px 15px'}}>Если вы смотрите этот поселок, то вам подойдут:</h3>*/}
-          <Box m={2}>
-            <SimilarVillages rerender={this.rerender} uid={village.uid} road={village.road} price={village.price}/>
-          </Box>
-        </Container>
-      </>
+        <>
+            {
+                Object.keys(village).length ? <>  <Page village={village}/>
+                        <Container maxWidth='lg'
+                                   style={{
+                                       padding: '15px 0'
+                                   }}
+                        >
+                            <Box m={2}>
+                                <SimilarVillages uid={village.uid}
+                                                 road={village.road} price={village.price}/>
+                            </Box>
+                        </Container>
+                    </>
+                    : null
+            }
+        </>
     )
-  }
+
 }
 
 export default VillagePage

@@ -32,7 +32,7 @@ const SimilarVillages = ({rerender, uid, road, price, ...props}) => {
           xs={12}
           sm={6}
           md={4}
-        > 
+        >
           <ReviewCard
             type={filteredVillages[i].type}
             uname={filteredVillages[i].uname}
@@ -45,7 +45,7 @@ const SimilarVillages = ({rerender, uid, road, price, ...props}) => {
             priceLands={filteredVillages[i].priceLands}
             sideOfMkad={filteredVillages[i].sideOfMkad}
             communications={filteredVillages[i].communications}
-            rerender={rerender}
+
           />
         </Grid>
       )
