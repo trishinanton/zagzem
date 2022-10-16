@@ -6,7 +6,7 @@ import Page from '../../components/Page'
 import SimilarVillages from '../../components/SimilarVillages'
 import {useLocation} from "react-router-dom";
 
-const VillagePage = () => {
+export const VillagePage = () => {
     const context = useContext(AppState)
     const path = useLocation()
 
@@ -26,25 +26,21 @@ const VillagePage = () => {
 
     }, [path])
 
-    return (
-        <>
-            {
-                Object.keys(village).length ? <>  <Page village={village}/>
-                        <Container maxWidth='lg'
-                                   style={{
-                                       padding: '15px 0'
-                                   }}
-                        >
-                            <Box m={2}>
-                                <SimilarVillages uid={village.uid}
-                                                 road={village.road} price={village.price}/>
-                            </Box>
-                        </Container>
-                    </>
-                    : null
-            }
-        </>
-    )
+    return (<>
+        {Object.keys(village).length && <>
+            <Page village={village}/>
+            <Container maxWidth='lg'
+                       style={{
+                           padding: '15px 0'
+                       }}
+            >
+                <Box m={2}>
+                    <SimilarVillages uid={village.uid}
+                                     road={village.road} price={village.price}/>
+                </Box>
+            </Container>
+        </>}
+    </>)
 
 }
 
