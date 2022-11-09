@@ -689,7 +689,7 @@ export default function Page (props){
 
   useEffect(()=>{
     document.getElementById('description-page').innerHTML=`${infoDescr[0].props.children}`
-  },[])
+  },[props])
 
   const {pathname} = useLocation()
   console.log('pathnew', pathname)
