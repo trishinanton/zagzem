@@ -17,7 +17,8 @@ class MyMap extends Component {
         return (
             <YMaps>
                 <Map
-                    defaultState={{
+                    state={{
+
                         center: centerMap,
                         zoom: 9,
                         // behaviors: ["disable('scrollZoom')"],
@@ -38,7 +39,7 @@ class MyMap extends Component {
                     <ZoomControl options={{ float: 'right' , size: "small", position:{right:10, top: 200}}} />
                     <GeolocationControl options={{ float: 'right', position: {right:10, bottom: 150} }} />
                     <Placemark
-                        defaultGeometry={centerMap}
+                        geometry={centerMap}
                     />
                 </Map>
             </YMaps>
