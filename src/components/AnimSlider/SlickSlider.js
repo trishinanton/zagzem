@@ -11,9 +11,9 @@ import {useAcfAsync} from "./utils";
 import uuid from "react-uuid";
 
 export function SlickSlider() {
-    
-  const {loading, data} = useAcfAsync('https://skgrouptrans.ru/gp-wp-projects/wp-json/wp/v2/slider?per_page=100')
-  
+
+  const {loading, data} = useAcfAsync('https://zagzem.ru/wp-backend/wp-json/wp/v2/slider?per_page=100')
+
   const settings = {
     dots: true,
     infinite: true,
