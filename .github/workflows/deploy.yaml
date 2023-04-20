@@ -28,5 +28,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          source: "src/index.js"
+          source: "./build"
           target: ${{ secrets.PROJECT_PATH_TEST }}
