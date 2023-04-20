@@ -21,10 +21,11 @@ jobs:
     needs: tests # указываем зависимую джобу т/е в данном случае деплой не запустится если тесты завершились ошибкой
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: superfly/flyctl-actions@1.1 # This is the action
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v0.1.10
         with:
-          args: "deploy"
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: cd ${{ secrets.PROJECT_PATH }} && whoami #хз как сборку забирать, где она хранится
