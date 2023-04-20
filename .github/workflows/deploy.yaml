@@ -21,6 +21,9 @@ jobs:
     needs: tests # указываем зависимую джобу т/е в данном случае деплой не запустится если тесты завершились ошибкой
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
         with:
@@ -28,5 +31,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          source: "./build"
+          source: "*"
           target: ${{ secrets.PROJECT_PATH_TEST }}
