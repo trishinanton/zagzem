@@ -28,4 +28,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd ${{ secrets.PROJECT_PATH }} && whoami #хз как сборку забирать, где она хранитсяя
+          script: cd ${{ secrets.PROJECT_PATH }} && whoami #хз как сборку забирать, где она хранится
