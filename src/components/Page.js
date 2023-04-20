@@ -247,7 +247,7 @@ export default function Page (props){
             iconName='bus'
             color='#8a6eac'
             selected={true}
-            value={'На автобусе: ' + value}
+            value={'На общественном транспорте: ' + value}
           />
         </Grid>
       )
