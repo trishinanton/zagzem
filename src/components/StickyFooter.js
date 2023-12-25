@@ -232,7 +232,7 @@ export default function StickyFooter() {
                       <h5 className='light-text' style={{padding:'0 10px'}}>Следите за нами в </h5>
                     </div>
                     <img src={vk} style={{marginRight:'10px'}} className={classes.icon} onClick={()=>{window.open('https://vk.com/zagorodnyezemli', '_blank')}}/>
-                    <img src={instagram} className={classes.icon} onClick={()=>{window.open('https://www.instagram.com/zagzem', '_blank')}}/>
+                    {/* <img src={instagram} className={classes.icon} onClick={()=>{window.open('https://www.instagram.com/zagzem', '_blank')}}/> */}
 
                   </Grid>
                 </Grid>
@@ -271,7 +271,7 @@ export default function StickyFooter() {
               <Grid container justifyContent='center' alignItems="center">
                 <Grid item xs={12} sm={6} md={12}>
                   <div className={classes.phone}>
-                    <h3 onClick={()=>window.location.href='tel:84999389228'}>+7 (499) 938-92-28</h3>
+                    <h3 onClick={()=>window.location.href='tel:84999384482'}>+7 (499) 938-44-82</h3>
                   </div>
                 </Grid>
                 <Grid item xs={12} sm={6} md={12}>

@@ -285,9 +285,9 @@ export default function Top(props) {
                   {menuBtns}
                   <h4
                       className={classes.phone}
-                      onClick={()=>window.location.href='tel:84999389228'}
+                      onClick={()=>window.location.href='tel:84999384482'}
                   >
-                    +7 (499) 938-92-28
+                    +7 (499) 938-44-82
                   </h4>
                   <img src={vk} style={{margin:'0 10px'}} className={classes.icon} onClick={()=>{window.open('https://vk.com/zagorodnyezemli', '_blank')}}/>
                   {/* <img src={instagram} className={classes.icon} onClick={()=>{window.open('https://www.instagram.com/zagzem', '_blank')}}/> */}
