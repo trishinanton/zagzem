@@ -271,7 +271,7 @@ export default function StickyFooter() {
               <Grid container justifyContent='center' alignItems="center">
                 <Grid item xs={12} sm={6} md={12}>
                   <div className={classes.phone}>
-                    <h3 onClick={()=>window.location.href='tel:84999384482'}>+7 (499) 938-44-82</h3>
+                    <h3 onClick={()=>window.location.href='tel:89200920625'}>+7 920 092-06-25</h3>
                   </div>
                 </Grid>
                 <Grid item xs={12} sm={6} md={12}>
