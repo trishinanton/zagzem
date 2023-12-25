@@ -290,7 +290,7 @@ export default function Top(props) {
                     +7 (499) 938-92-28
                   </h4>
                   <img src={vk} style={{margin:'0 10px'}} className={classes.icon} onClick={()=>{window.open('https://vk.com/zagorodnyezemli', '_blank')}}/>
-                  <img src={instagram} className={classes.icon} onClick={()=>{window.open('https://www.instagram.com/zagzem', '_blank')}}/>
+                  {/* <img src={instagram} className={classes.icon} onClick={()=>{window.open('https://www.instagram.com/zagzem', '_blank')}}/> */}
                 </Toolbar>
               </Container>
             </AppBar>
